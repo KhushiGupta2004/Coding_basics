@@ -1,0 +1,14 @@
+import java.time.LocalTime;
+
+public class TimeExample {
+    public static void main(String[] args) {
+        LocalTime now = LocalTime.now(); // Current time
+        LocalTime specificTime = LocalTime.of(14, 30, 15); // 14:30:15
+
+        System.out.println("Current Time: " + now);
+        System.out.println("Specific Time: " + specificTime);
+        System.out.println("Hour: " + now.getHour());
+        System.out.println("Minute: " + now.getMinute());
+        System.out.println("Second: " + now.getSecond());
+    }
+}
