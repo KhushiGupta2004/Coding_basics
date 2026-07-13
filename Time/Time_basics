@@ -1,2 +1,3 @@
 "HH:mm:ss" → 24-hour format
 "hh:mm:ss a" → 12-hour format with AM/PM
+plusHours(n), minusMinutes(n) → add/subtract time
