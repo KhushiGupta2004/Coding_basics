@@ -28,19 +28,18 @@
 
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
-static void generateUniquePermutations(String str, String ans) {
+public static String generateUniquePermutations(String str, String ans) {
 
         // Base case
         if (str.length() == 0) {
-            System.out.println(ans);
-            return;
+            return ans + "\n";
         }
 
-        // Keeps track of characters already used at the current recursion level
+        String result = "";
         HashSet<Character> used = new HashSet<>();
 
         for (int i = 0; i < str.length(); i++) {
@@ -54,10 +53,10 @@ static void generateUniquePermutations(String str, String ans) {
 
             used.add(current);
 
-            // Remove the current character from the string
             String remaining = str.substring(0, i) + str.substring(i + 1);
 
-            // Recursive call
-            generateUniquePermutations(remaining, ans + current);
+            result += generateUniquePermutations(remaining, ans + current);
         }
+
+        return result;
     }
