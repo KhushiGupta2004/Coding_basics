@@ -1,0 +1,23 @@
+public class StringPermutations {
+
+    // Method to generate permutations
+    public static void generatePermutations(String str, String ans) {
+
+        // Base case
+        if (str.length() == 0) {
+            System.out.println(ans);
+            return;
+        }
+
+        // Pick each character one by one
+        for (int i = 0; i < str.length(); i++) {
+
+            char current = str.charAt(i);
+
+            // Remaining string after removing current character
+            String remaining = str.substring(0, i) + str.substring(i + 1);
+
+            // Recursive call
+            generatePermutations(remaining, ans + current);
+        }
+    }
