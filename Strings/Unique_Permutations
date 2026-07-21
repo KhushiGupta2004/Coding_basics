@@ -25,3 +25,39 @@
             generateUniquePermutations(remaining, ans + current);
         }
     }
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+static void generateUniquePermutations(String str, String ans) {
+
+        // Base case
+        if (str.length() == 0) {
+            System.out.println(ans);
+            return;
+        }
+
+        // Keeps track of characters already used at the current recursion level
+        HashSet<Character> used = new HashSet<>();
+
+        for (int i = 0; i < str.length(); i++) {
+
+            char current = str.charAt(i);
+
+            // Skip duplicate characters
+            if (used.contains(current)) {
+                continue;
+            }
+
+            used.add(current);
+
+            // Remove the current character from the string
+            String remaining = str.substring(0, i) + str.substring(i + 1);
+
+            // Recursive call
+            generateUniquePermutations(remaining, ans + current);
+        }
+    }
