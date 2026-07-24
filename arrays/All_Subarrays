@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+
+    public static List<int[]> generateSubarrays(int[] arr) {
+        List<int[]> result = new ArrayList<>();
+
+        for (int start = 0; start < arr.length; start++) {
+            for (int end = start; end < arr.length; end++) {
+
+                int[] subarray = Arrays.copyOfRange(arr, start, end + 1);
+                result.add(subarray);
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+
+        List<int[]> subarrays = generateSubarrays(arr);
+
+        for (int[] sub : subarrays) {
+            System.out.println(Arrays.toString(sub));
+        }
+    }
+}
