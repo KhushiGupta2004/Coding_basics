@@ -1,0 +1,25 @@
+ public static void generatePermutations(int[] arr, int index) {
+
+        // Base case
+        if (index == arr.length) {
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+
+        // Try every possible element at current position
+        for (int i = index; i < arr.length; i++) {
+
+            // Swap
+            int temp = arr[index];
+            arr[index] = arr[i];
+            arr[i] = temp;
+
+            // Recurse
+            generatePermutations(arr, index + 1);
+
+            // Backtrack (undo swap)
+            temp = arr[index];
+            arr[index] = arr[i];
+            arr[i] = temp;
+        }
+    }
