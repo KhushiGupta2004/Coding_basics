@@ -1,0 +1,10 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Integer arr[] = {1, 4, 3, 6};
+
+        Arrays.sort(arr, Collections.reverseOrder());
+        System.out.println(Arrays.toString(arr));
+    }
+}
