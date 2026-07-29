@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 360;
+        List<Integer> factors = uniquePrimeFactors(n);
+
+        System.out.println(factors);
+    }
+
+    static List<Integer> uniquePrimeFactors(int n) {
+        List<Integer> result = new ArrayList<>();
+
+        // Check factor 2 separately
+        if (n % 2 == 0) {
+            result.add(2);
+            while (n % 2 == 0) {
+                n /= 2;
+            }
+        }
+
+        // Check odd factors
+        for (int i = 3; i * i <= n; i += 2) {
+            if (n % i == 0) {
+                result.add(i);
+                while (n % i == 0) {
+                    n /= i;
+                }
+            }
+        }
+
+        // If n is still greater than 1, it is a prime
+        if (n > 1) {
+            result.add(n);
+        }
+
+        return result;
+    }
+}
