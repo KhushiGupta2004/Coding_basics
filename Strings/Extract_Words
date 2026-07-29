@@ -13,3 +13,25 @@ public class Main {
         }
     }
 }
+
+---------------------------------------------------------------------------------------
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello! Welcome, to Java programming.";
+
+        StringTokenizer st = new StringTokenizer(str);
+
+        int n = st.countTokens();
+        String[] words = new String[n];
+
+        for (int i = 0; i < n; i++) {
+            words[i] = st.nextToken();
+        }
+
+        for (String word : words) {
+            System.out.println(word);
+        }
+    }
+}
